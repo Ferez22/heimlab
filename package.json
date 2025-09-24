@@ -9,17 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.15",
     "@types/lodash.debounce": "^4.0.9",
+    "clsx": "^2.1.1",
     "fontfaceobserver": "^2.3.0",
     "framer-motion": "^12.23.21",
     "gsap": "^3.13.0",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.544.0",
+    "motion": "^12.23.21",
     "next": "15.5.4",
+    "qss": "^3.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-just-parallax": "^3.1.16",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

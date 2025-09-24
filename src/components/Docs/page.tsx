@@ -4,6 +4,7 @@ import { CONFIG } from "@/config-global";
 import Button from "../ui/atoms/button";
 import { ArrowLeft } from "lucide-react";
 import * as S from "./page.styles";
+import { LinkPreview } from "../ui/link-preview";
 
 const DocsPage = () => {
   return (
@@ -38,6 +39,21 @@ const DocsPage = () => {
           <pre>
             <code>docker compose up</code>
           </pre>
+          <p>That&apos;s it, you are set up and ready to go!</p>
+        </S.SectionContent>
+      </S.Section>
+
+      <S.Section>
+        <S.SectionTitle>Openly accessible, securely</S.SectionTitle>
+        <S.SectionContent>
+          <div>
+            For this, you will need to setup a reverse proxy. You can use{" "}
+            <LinkPreview url="https://cloudflare.com/" className="font-bold">
+              Cloudflare tunnels
+            </LinkPreview>{" "}
+            for this.
+          </div>
+
           <p>That&apos;s it, you are set up and ready to go!</p>
         </S.SectionContent>
       </S.Section>
