@@ -4,7 +4,7 @@ import { useSpring, useTransform, useScroll } from "framer-motion";
 
 import { LinkHandler } from "@/components/LinkHandler/LinkHandler";
 import { useElementSize } from "@/hooks/useElementSize";
-// import { DocsInfo } from "@/sections/DocsInfo/DocsInfo";
+import { DocsInfo } from "@/sections/DocsInfo/DocsInfo";
 import { Caption } from "@/components/Caption/Caption";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { Head } from "@/components/seo/Head/Head";
@@ -79,17 +79,13 @@ export default function IndexPage() {
           />
         </S.CaptionWrapper>
 
-        <S.GithubWrapper>
-          <LinkHandler elHref="/examples/1">
-            <S.GithubLink>Demo 1</S.GithubLink>
-          </LinkHandler>
-        </S.GithubWrapper>
+        <S.GithubWrapper>ferez</S.GithubWrapper>
 
-        {/* <S.Wrapper>
+        <S.Wrapper>
           <S.DocsWrapper>
             <DocsInfo scrollContainerRef={scrollContainerRef} />
           </S.DocsWrapper>
-        </S.Wrapper> */}
+        </S.Wrapper>
       </S.ScrollContainer>
     </>
   );
