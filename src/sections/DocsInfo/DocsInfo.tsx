@@ -5,18 +5,14 @@ import { CONFIG } from "@/config-global";
 
 import * as S from "./DocsInfo.styles";
 
-interface Props {
-  scrollContainerRef: React.MutableRefObject<HTMLDivElement | null>;
-}
-
-export const DocsInfo = (props: Props) => {
+export const DocsInfo = () => {
   return (
     <>
       <S.Container>
         <S.Title>📜 Docker is your friend</S.Title>
         <S.Paragraph>
           Read the{" "}
-          <LinkHandler isExternal elHref={CONFIG.router.docs}>
+          <LinkHandler elHref={CONFIG.router.docs}>
             <S.InlineLink>documentation</S.InlineLink>
           </LinkHandler>
         </S.Paragraph>

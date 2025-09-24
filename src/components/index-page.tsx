@@ -88,7 +88,7 @@ export default function IndexPage() {
 
         <S.Wrapper>
           <S.DocsWrapper>
-            <DocsInfo scrollContainerRef={scrollContainerRef} />
+            <DocsInfo />
           </S.DocsWrapper>
         </S.Wrapper>
       </S.ScrollContainer>
