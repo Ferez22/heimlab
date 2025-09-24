@@ -1,5 +1,7 @@
-const DocsPage = () => {
-  return <div>DocsPage</div>;
+import DocsPage from "@/components/Docs/page";
+
+const Docs = () => {
+  return <DocsPage />;
 };
 
-export default DocsPage;
+export default Docs;

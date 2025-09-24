@@ -37,8 +37,8 @@ const springSettings = {
 };
 
 export default function IndexPage() {
-  const scrollContainerRef = useRef<null | HTMLDivElement>(null);
-  const captionWrapperRef = useRef<null | HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null!);
+  const captionWrapperRef = useRef<HTMLDivElement>(null!);
   const { windowSizeRef } = useWindowSize();
   const { sizeRef: captionWrapperSizeRef } = useElementSize(captionWrapperRef);
   const { scrollY } = useScroll({ container: scrollContainerRef });
