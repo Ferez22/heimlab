@@ -20,6 +20,13 @@ export const DocsWrapper = styled.div`
   }
 `;
 
+export const InlineLink = styled.span`
+  display: inline-block;
+  font-weight: 800;
+  position: relative;
+  ${underline};
+`;
+
 export const CaptionWrapper = styled.div`
   height: 300vh;
 

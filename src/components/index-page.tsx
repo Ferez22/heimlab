@@ -10,6 +10,7 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import { Head } from "@/components/seo/Head/Head";
 
 import * as S from "./index-page.styles";
+import { CONFIG } from "@/config-global";
 
 const quickerPoint = 0.2;
 
@@ -79,7 +80,11 @@ export default function IndexPage() {
           />
         </S.CaptionWrapper>
 
-        <S.GithubWrapper>ferez</S.GithubWrapper>
+        <S.GithubWrapper>
+          <LinkHandler isExternal elHref={CONFIG.router.github}>
+            <S.InlineLink>ferez</S.InlineLink>
+          </LinkHandler>
+        </S.GithubWrapper>
 
         <S.Wrapper>
           <S.DocsWrapper>
