@@ -38,9 +38,11 @@ export const CaptionWrapper = styled.div`
 export const Wrapper = styled.div`
   margin: 0 auto;
   width: 80%;
+  max-width: 100rem;
 
   ${media.tablet} {
-    width: 100rem;
+    width: 90%;
+    max-width: 1200px;
   }
 `;
 
