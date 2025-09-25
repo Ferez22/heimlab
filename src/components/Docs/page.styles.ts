@@ -5,6 +5,7 @@ import { media } from "@/utils/media";
 export const PageContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
+  background: var(--background);
 `;
 
 export const PageTitle = styled.h1`

@@ -48,7 +48,10 @@ const DocsPage = () => {
         <S.SectionContent>
           <div>
             For this, you will need to setup a reverse proxy. You can use{" "}
-            <LinkPreview url="https://cloudflare.com/" className="font-bold">
+            <LinkPreview
+              url="https://cloudflare.com/"
+              className="font-bold text-white text-lg"
+            >
               Cloudflare tunnels
             </LinkPreview>{" "}
             for this.
