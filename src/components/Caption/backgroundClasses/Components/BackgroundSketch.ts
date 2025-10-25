@@ -1,4 +1,4 @@
-import { Bounds, UpdateInfo } from 'utils/sharedTypes';
+import { Bounds, UpdateInfo } from "@/utils/sharedTypes";
 
 interface Constructor {
   ctx: CanvasRenderingContext2D | null;
@@ -33,18 +33,22 @@ export class BackgroundSketch {
     this._ctx.lineTo(0, this._rendererBounds.height);
 
     const t = (1 - this._scrollRatioRest) * this._rendererBounds.height;
-    const amplitude = this._rendererBounds.width * 0.1 * Math.sin(this._scrollRatioRest * Math.PI);
+    const amplitude =
+      this._rendererBounds.width *
+      0.1 *
+      Math.sin(this._scrollRatioRest * Math.PI);
 
     this._ctx.lineTo(0, t);
 
     for (let index = 0; index <= widthSegments; index++) {
       const n = segments * index;
-      const r = t - Math.sin((n / this._rendererBounds.width) * Math.PI) * amplitude;
+      const r =
+        t - Math.sin((n / this._rendererBounds.width) * Math.PI) * amplitude;
 
       this._ctx.lineTo(n, r);
     }
 
-    this._ctx.fillStyle = '#9BDBD8';
+    this._ctx.fillStyle = "#9BDBD8";
     this._ctx.fill();
   }
 

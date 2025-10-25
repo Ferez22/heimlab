@@ -1,8 +1,8 @@
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
-import { Bounds, UpdateInfo } from 'utils/sharedTypes';
+import { Bounds, UpdateInfo } from "@/utils/sharedTypes";
 
-import { App } from '../App';
+import { App } from "../App";
 
 interface Constructor {
   text: string;
@@ -10,7 +10,7 @@ interface Constructor {
 }
 
 export class TextSketch {
-  static defaultEase = 'expo.inOut';
+  static defaultEase = "expo.inOut";
   static edgeSize = 0.07;
 
   _rendererBounds: Bounds = { width: 1, height: 1 };
@@ -41,28 +41,39 @@ export class TextSketch {
     this._ctx.lineTo(0, this._rendererBounds.height);
 
     const t = (1 - this._scrollRatioRest) * this._rendererBounds.height;
-    const amplitude = this._rendererBounds.width * 0.1 * Math.sin(this._scrollRatioRest * Math.PI);
+    const amplitude =
+      this._rendererBounds.width *
+      0.1 *
+      Math.sin(this._scrollRatioRest * Math.PI);
 
     this._ctx.lineTo(0, t);
 
     for (let index = 0; index <= widthSegments; index++) {
       const n = segments * index;
-      const r = t - Math.sin((n / this._rendererBounds.width) * Math.PI) * amplitude;
+      const r =
+        t - Math.sin((n / this._rendererBounds.width) * Math.PI) * amplitude;
 
       this._ctx.lineTo(n, r);
     }
 
-    this._ctx.fillStyle = 'rgb(244,244,244)';
+    this._ctx.fillStyle = "rgb(244,244,244)";
     this._ctx.fill();
   }
 
   _clipRect() {
     if (!this._ctx) return;
-    const edgeRounded = Math.round(this._rendererBounds.width * TextSketch.edgeSize);
+    const edgeRounded = Math.round(
+      this._rendererBounds.width * TextSketch.edgeSize
+    );
     const leftX = edgeRounded;
 
     this._ctx.beginPath();
-    this._ctx.rect(leftX, 0, this._rendererBounds.width - 2 * leftX, this._rendererBounds.height);
+    this._ctx.rect(
+      leftX,
+      0,
+      this._rendererBounds.width - 2 * leftX,
+      this._rendererBounds.height
+    );
     this._ctx.clip();
   }
 
@@ -98,13 +109,18 @@ export class TextSketch {
 
     this._ctx.font = `bold ${this._textMeasures.fontSize}px teko`;
 
-    if (this._ctx) this._ctx.globalCompositeOperation = 'source-over';
+    if (this._ctx) this._ctx.globalCompositeOperation = "source-over";
     this._ctx.fillStyle = App.backgroundColor;
-    this._ctx.fillRect(0, 0, this._rendererBounds.width, this._rendererBounds.height);
+    this._ctx.fillRect(
+      0,
+      0,
+      this._rendererBounds.width,
+      this._rendererBounds.height
+    );
 
-    if (this._ctx) this._ctx.globalCompositeOperation = 'source-over';
+    if (this._ctx) this._ctx.globalCompositeOperation = "source-over";
     this._drawBackground();
-    if (this._ctx) this._ctx.globalCompositeOperation = 'xor';
+    if (this._ctx) this._ctx.globalCompositeOperation = "xor";
 
     this._ctx.save();
     this._clipRect();
@@ -135,7 +151,8 @@ export class TextSketch {
     this._ctx.font = `bold ${this._textMeasures.fontSize}px teko`;
 
     const metrics = this._ctx.measureText(this._textValue);
-    const actualHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
+    const actualHeight =
+      metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
 
     this._textMeasures.height = actualHeight;
     this._textMeasures.width = metrics.width;
